@@ -1,122 +1,179 @@
-// Importation de Page.js
-import page from 'page';
+// Contenu des pages
+const pages = {
+    accueil: `
+        <div class="hero-section">
+            <div class="hero-text">
+                <h1 class="hero-title">ANALYSE DE COMMANDITAIRES</h1>
+                <p class="hero-subtitle">Sélectionner un commanditaire pour visionner la fiche d'analyse.</p>
+            </div>
+            <img src="images/IMG01.png" alt="Image d'accueil" class="hero-image">
+        </div>
+    `,
+    
+    musee: `
+        <div class="content-section">
+            <div class="content-header">
+                <img src="images/IMG02.png" alt="Logo Musée Océanographique" class="content-logo">
+                <h1>MUSÉE<br>OCÉANOGRAPHIQUE DE MONACO</h1>
+            </div>
+            
+            <h2>Contexte global</h2>
+            <p>La préservation des océans est un enjeu majeur du XXIe siècle, notamment face aux impacts du changement climatique, de la pollution et de la surexploitation des ressources marines. Le Musée Océanographique de Monaco joue un rôle clé dans la sensibilisation du grand public à ces problématiques à travers ses expositions et initiatives éducatives. Cependant, la représentation des milieux marins en milieu muséal pose un défi majeur : comment retranscrire fidèlement la complexité des écosystèmes aquatiques et rendre visible l'invisible.</p>
+            
+            <h2>Commanditaire – Présentation</h2>
+            <p>Le Musée Océanographique de Monaco, fondé en 1910, est une institution de référence dédiée à la connaissance des océans et à leur préservation. Il propose une approche pédagogique alliant sciences, culture et art pour éveiller les consciences et promouvoir des comportements responsables envers le monde marin.</p>
+            
+            <h2>Objectif de communication</h2>
+            <p>En réponse au contexte : Proposer une alternative immersive permettant d'observer et de comprendre les écosystèmes marins sans nécessiter de reconstitutions physiques en aquarium.<br>
+            Susciter une fascination pour la biodiversité marine à travers une approche interactive et éducative.<br>
+            Encourager une prise de conscience sur les menaces qui pèsent sur ces milieux et inciter à des actions concrètes en faveur de la préservation des océans.</p>
+            
+            <h2>Problème de communication</h2>
+            <p>Difficulté d'accès : Les visiteurs n'ont pas toujours la possibilité de voir les espèces dans leur environnement naturel et d'en saisir pleinement l'importance écologique.<br>
+            Difficulté de diffusion : Les informations scientifiques sur les écosystèmes sont souvent complexes et peuvent manquer d'attrait pour le grand public.<br>
+            Baisse de sortie cible sur internet réseaux : Le musée doit renforcer sa présence numérique pour capter une audience jeune et engagée.</p>
+            
+            <h2>Ma cible</h2>
+            <p>Jeunes adultes 16-25 ans intéressés par les sciences naturelles, l'océanographie et la conservation marine.<br>
+            Étudiants et chercheurs en biologie marine cherchant des ressources pédagogiques complémentaires.<br>
+            Visiteurs du musée souhaitant prolonger leur expérience avec des outils numériques immersifs.<br>
+            Public scolaire et universitaire désireux d'utiliser des supports interactifs pour apprendre sur la biodiversité marine.</p>
+            
+            <h2>Mission</h2>
+            <p>Ce projet vise à développer une expérience immersive disponible sur les sites du musée et ou durant la visite physique. L'objectif est d'offrir une exploration interactive des écosystèmes marins à travers<br>
+            Une interface numérique permettant de visualiser les espèces et leurs habitats.<br>
+            Une représentation dynamique des interactions entre les organismes et leur environnement.<br>
+            Une mise en contexte des impacts environnementaux grâce à des visualisations de données accessibles et engageantes.</p>
+        </div>
+    `,
+    
+    natgeo: `
+        <div class="content-section">
+            <div class="content-header">
+                <img src="images/IMG03.png" alt="Logo National Geographic Wild" class="content-logo">
+                <h1>NATIONAL<br>GEOGRAPHIC WILD</h1>
+            </div>
+            
+            <h2>Contexte global</h2>
+            <p>L'accélération des menaces environnementales et la perte de biodiversité nécessitent une sensibilisation massive du grand public. National Geographic Wild, en tant que média dédié à la nature et aux documentaires scientifiques, a un rôle essentiel dans la transmission de ces enjeux. Cependant, l'accès à l'information et la mobilisation du public restent des défis majeurs.</p>
+            
+            <h2>Commanditaire – Présentation</h2>
+            <p>National Geographic Wild est une chaîne spécialisée dans la diffusion de documentaires animaliers et environnementaux. Elle met en avant la beauté du monde naturel tout en alertant sur les dangers qui le menacent. Son engagement éducatif et sa capacité à toucher une audience mondiale en font un acteur incontournable de la sensibilisation à l'environnement.</p>
+            
+            <h2>Objectif de communication</h2>
+            <p>En réponse au contexte : Faciliter l'accès aux informations environnementales et renforcer l'impact des documentaires auprès du public.<br>
+            Susciter une curiosité accrue pour la nature et l'envie de s'impliquer dans sa préservation.<br>
+            Encourager un engagement concret en proposant des passerelles vers des initiatives et organisations de conservation.</p>
+            
+            <h2>Problème de communication</h2>
+            <p>Difficulté d'accès : Le grand public manque parfois de repères pour approfondir les thématiques abordées dans les documentaires.<br>
+            Difficulté d'engagement : Le spectateur est souvent passif devant le contenu et ne sait pas comment agir concrètement après le visionnage.<br>
+            Fragmentation de l'information : Les contenus sont parfois perçus comme des éléments isolés, sans lien direct entre eux, limitant ainsi une compréhension systémique des enjeux environnementaux.</p>
+            
+            <h2>Ma cible</h2>
+            <p>Spectateurs et abonnés 16-25 ans de National Geographic Wild, amateurs de documentaires animaliers et environnementaux.<br>
+            Curieux et passionnés de nature souhaitant s'engager dans des actions concrètes de protection des écosystèmes.<br>
+            Étudiants en écologie et biologie cherchant du contenu éducatif complémentaire.<br>
+            Organisations de sensibilisation et de conservation désireuses d'utiliser une plateforme interactive pour mobiliser un public plus large.</p>
+            
+            <h2>Mission</h2>
+            <p>Le projet vise à créer une expérience immersive et interactive qui accompagne les documentaires et facilite l'engagement du spectateur. Les principaux axes de développement sont<br>
+            Une interface interactive sous forme de globe, reliant les documentaires et les données scientifiques associées.<br>
+            Une mise en réseau des initiatives de conservation avec des appels à l'action clairs et accessibles.<br>
+            Un parcours utilisateur optimisé pour transformer l'intérêt du spectateur en actions concrètes bénévolat, soutien aux projets, participation à des campagnes de sensibilisation.</p>
+        </div>
+    `,
+    
+    association: `
+        <div class="content-section">
+            <div class="content-header">
+                <img src="images/IMG04.png" alt="Logo Association de Protection Marine" class="content-logo">
+                <h1>ASSOCIATION<br>DE PROTECTION MARINE OCÉANOSCIENTIFIC</h1>
+            </div>
+            
+            <h2>Contexte global</h2>
+            <p>Les écosystèmes aquatiques de la Méditerranée subissent une dégradation rapide en raison de la pollution, du réchauffement climatique et de la surpêche. La diffusion des connaissances scientifiques est essentielle pour sensibiliser le grand public et favoriser des actions de préservation. Cependant, le manque d'outils interactifs et accessibles limite la compréhension et l'implication des citoyens dans ces enjeux environnementaux.</p>
+            
+            <h2>Commanditaire – Présentation</h2>
+            <p>L'Association de Protection Marine OcéanoScientific de Nice est une organisation engagée dans la sauvegarde des écosystèmes marins méditerranéens. Elle œuvre à travers la recherche scientifique, des actions de terrain et des campagnes de sensibilisation auprès des citoyens et des institutions.</p>
+            
+            <h2>Objectif de communication</h2>
+            <p>En réponse au contexte : Valoriser les données scientifiques pour sensibiliser à la fragilité des écosystèmes aquatiques et encourager leur préservation.<br>
+            Susciter l'intérêt du grand public en rendant accessibles et compréhensibles les enjeux de conservation marine.<br>
+            Encourager une participation active en facilitant l'engagement des citoyens et bénévoles dans des actions concrètes.</p>
+            
+            <h2>Problème de communication</h2>
+            <p>Difficulté d'accès : Les connaissances scientifiques restent souvent confinées aux milieux académiques et spécialisés.<br>
+            Difficulté de compréhension : L'abondance de données complexes rend leur vulgarisation difficile sans outils adaptés.<br>
+            Difficulté de diffusion : Le manque de supports interactifs limite la portée des campagnes de sensibilisation.</p>
+            
+            <h2>Ma cible</h2>
+            <p>Grand public 16-25 ans curieux des enjeux environnementaux mais ayant peu d'accès aux informations scientifiques.<br>
+            Bénévoles et militants écologiques souhaitant des outils interactifs pour vulgariser les données de terrain.<br>
+            Étudiants en sciences de l'environnement cherchant des moyens d'apprentissage immersifs et visuels.<br>
+            Médias et organismes éducatifs intéressés par des supports innovants pour sensibiliser un large public.</p>
+            
+            <h2>Mission</h2>
+            <p>Le projet consiste à concevoir un dispositif interactif permettant de mieux comprendre les écosystèmes marins méditerranéens à travers<br>
+            Des micro-espaces numériques illustrant les interactions entre espèces et leur environnement.<br>
+            Une visualisation des données scientifiques sous forme d'infographies et de simulations dynamiques.<br>
+            Un système de sensibilisation ludique et immersif, favorisant une prise de conscience et une implication active du public dans la préservation des océans.</p>
+        </div>
+    `
+};
 
-// Fonction pour afficher le contenu dans la section principale
-function render(content) {
-    const contentDiv = document.getElementById('content');
-    contentDiv.classList.remove('active'); // Désactive l'ancien contenu
+// Fonction pour afficher le contenu avec transition
+function showPage(pageName) {
+    const contentElement = document.getElementById('content');
+    
+    // Transition de sortie
+    contentElement.classList.add('fade');
+    
+    // Attendre la transition avant de changer le contenu
     setTimeout(() => {
-        contentDiv.innerHTML = content;
-        contentDiv.classList.add('active'); // Active l'animation du nouveau contenu
-    }, 200);
+        contentElement.innerHTML = pages[pageName] || pages.accueil;
+        
+        // Transition d'entrée
+        setTimeout(() => {
+            contentElement.classList.remove('fade');
+        }, 50);
+    }, 300);
+    
+    // Mettre à jour l'URL sans recharger la page
+    window.history.pushState({page: pageName}, pageName, `#${pageName}`);
 }
 
-// Pages du site
-const museePage = `
-    <h1>Musée Océanographique de Monaco</h1>
-    <h2>Contexte global</h2>
-    <p>La préservation des océans est un enjeu majeur du XXIe siècle, notamment face aux impacts du changement climatique, de la pollution et de la surexploitation des ressources marines...</p>
-    <h2>Commanditaire – Présentation</h2>
-    <p>Le Musée Océanographique de Monaco, fondé en 1910, est une institution de référence dédiée à la connaissance des océans et à leur préservation...</p>
-    <h2>Objectif de communication</h2>
-    <ul>
-        <li>Proposer une alternative immersive permettant d’observer et de comprendre les écosystèmes marins.</li>
-        <li>Susciter une fascination pour la biodiversité marine.</li>
-        <li>Encourager une prise de conscience sur les menaces pesant sur ces milieux.</li>
-    </ul>
-`;
-
-const natGeoPage = `
-    <h1>National Geographic Wild</h1>
-    <h2>Contexte global</h2>
-    <p>L’accélération des menaces environnementales et la perte de biodiversité nécessitent une sensibilisation massive du grand public...</p>
-    <h2>Commanditaire – Présentation</h2>
-    <p>National Geographic Wild est une chaîne spécialisée dans la diffusion de documentaires animaliers et environnementaux...</p>
-    <h2>Objectif de communication</h2>
-    <ul>
-        <li>Faciliter l’accès aux informations environnementales.</li>
-        <li>Encourager un engagement concret en proposant des passerelles vers des initiatives de conservation.</li>
-    </ul>
-`;
-
-const associationPage = `
-    <h1>Association de Protection Marine</h1>
-    <h2>Contexte global</h2>
-    <p>Les écosystèmes aquatiques de la Méditerranée subissent une dégradation rapide en raison de la pollution...</p>
-    <h2>Commanditaire – Présentation</h2>
-    <p>L’Association de Protection Marine OcéanoScientific de Nice est une organisation engagée dans la sauvegarde des écosystèmes marins méditerranéens...</p>
-    <h2>Objectif de communication</h2>
-    <ul>
-        <li>Valoriser les données scientifiques pour sensibiliser à la fragilité des écosystèmes aquatiques.</li>
-        <li>Encourager une participation active du public dans la préservation des océans.</li>
-    </ul>
-`;
-
-// Définition des routes avec Page.js (mode hashbang pour éviter les erreurs 404)
-page.base('/');
-page({ hashbang: true });
-
-page('/', () => render('<h1>Analyse de commanditaires</h1><p>Sélectionner un commanditaire.</p>'));
-page('/musee', () => render(museePage));
-page('/natgeo', () => render(natGeoPage));
-page('/association', () => render(associationPage));
-page();
-
-// Structure HTML de base (à placer dans ton fichier index.html)
-const layout = `
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #ffffff;
-            color: #000000;
-            text-align: left;
-        }
-
-        nav {
-            background: black;
-            padding: 15px;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            font-weight: bold;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 18px;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: gray;
-        }
-
-        main {
-            max-width: 1000px;
-            margin: 50px auto;
-            padding: 60px;
-            border-radius: 10px;
-            text-align: center;
-            font-size: 22px;
-        }
-    </style>
-    <nav>
-        <a href="#/musee" onclick="navigate(event, '/musee')">Musée Océanographique</a>
-        <a href="#/natgeo" onclick="navigate(event, '/natgeo')">National Geographic Wild</a>
-        <a href="#/association" onclick="navigate(event, '/association')">Association Marine</a>
-    </nav>
-    <main id="content">
-        <h1>Analyse de commanditaires</h1>
-        <p>Sélectionner un commanditaire.</p>
-    </main>
-`;
-
-document.body.innerHTML = layout;
-
-// Fonction pour la navigation sans rechargement
-function navigate(event, path) {
-    event.preventDefault();
-    page(path);
-}
+// Ajouter les écouteurs d'événements pour les liens de navigation
+document.addEventListener('DOMContentLoaded', () => {
+    // Récupérer tous les liens de navigation
+    const navLinks = document.querySelectorAll('nav a');
+    
+    // Ajouter un gestionnaire d'événements à chaque lien
+    navLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            const pageName = link.getAttribute('data-page');
+            showPage(pageName);
+        });
+    });
+    
+    // Logo cliquable pour retourner à l'accueil
+    document.getElementById('logo').addEventListener('click', (event) => {
+        event.preventDefault();
+        showPage('accueil');
+    });
+    
+    // Gérer la navigation avec les boutons retour/avant du navigateur
+    window.addEventListener('popstate', (event) => {
+        const pageName = event.state?.page || 'accueil';
+        showPage(pageName);
+    });
+    
+    // Vérifier si une page spécifique est demandée via le hash
+    const hash = window.location.hash.substring(1);
+    if (hash && pages[hash]) {
+        showPage(hash);
+    } else {
+        showPage('accueil');
+    }
+});
