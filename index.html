@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Analyse de commanditaires</title>
-    <script defer src="app.js" type="module"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,45 +13,190 @@
             color: #000000;
             text-align: left;
         }
-
+        
+        /* En-tête style National Geographic */
+        header {
+            background-color: #000000;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            align-items: center;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .logo-container img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .logo-text {
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 1.2;
+            text-align: left;
+        }
+        
+        .author-name {
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        /* Navigation principale */
         nav {
-            background: black;
+            background: white;
             padding: 15px;
             text-align: center;
+            border-bottom: 1px solid #e5e5e5;
         }
-
+        
         nav a {
-            color: white;
+            color: black;
             font-weight: bold;
             text-decoration: none;
             margin: 0 15px;
-            font-size: 18px;
+            font-size: 14px;
+            text-transform: uppercase;
             transition: color 0.3s;
         }
-
+        
         nav a:hover {
-            color: gray;
+            color: #ffcc00;
         }
-
+        
+        /* Contenu principal */
         main {
-            max-width: 1000px;
-            margin: 50px auto;
-            padding: 60px;
-            border-radius: 10px;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0;
+        }
+        
+        .hero-section {
+            position: relative;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        
+        .hero-text {
+            width: 100%;
             text-align: center;
-            font-size: 22px;
+            padding: 30px 0;
+            color: black;
+            z-index: 1;
+        }
+        
+        .hero-image {
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .hero-title {
+            font-size: 48px;
+            margin: 0;
+            text-transform: uppercase;
+            text-align: center;
+            color: black;
+        }
+        
+        .hero-subtitle {
+            font-size: 20px;
+            margin-top: 20px;
+            text-align: center;
+            color: black;
+        }
+        
+        /* Sections de contenu */
+        .content-section {
+            padding: 40px;
+            text-align: left;
+            font-size: 16px;
+        }
+        
+        .content-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .content-logo {
+            width: 120px;
+            height: auto;
+            margin-right: 20px;
+        }
+        
+        .content-section h1 {
+            font-size: 36px;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+        
+        .content-section h2 {
+            color: #333;
+            margin-top: 25px;
+        }
+        
+        /* Transition pour les pages */
+        .content-transition {
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+        
+        .content-transition.fade {
+            opacity: 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 32px;
+            }
+            
+            .hero-subtitle {
+                font-size: 16px;
+            }
+            
+            .content-section {
+                padding: 20px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- En-tête style National Geographic -->
+    <header>
+        <div class="logo-container" id="logo">
+            <img src="images/logo-small.png" alt="Logo">
+            <div class="logo-text">ANALYSE<br>DE COMMANDITAIRES</div>
+        </div>
+        <div class="author-name">
+            Johann Arata
+        </div>
+    </header>
+    
+    <!-- Navigation principale -->
     <nav>
-        <a href="#/musee" onclick="navigate(event, '/musee')">Musée Océanographique</a>
-        <a href="#/natgeo" onclick="navigate(event, '/natgeo')">National Geographic Wild</a>
-        <a href="#/association" onclick="navigate(event, '/association')">Association Marine</a>
+        <a href="#" data-page="accueil">ACCUEIL</a>
+        <a href="#" data-page="musee">MUSÉE OCÉANOGRAPHIQUE</a>
+        <a href="#" data-page="natgeo">NATIONAL GEOGRAPHIC WILD</a>
+        <a href="#" data-page="association">ASSOCIATION MARINE</a>
     </nav>
-    <main id="content">
-        <h1>Analyse de commanditaires</h1>
-        <p>Sélectionner un commanditaire.</p>
+    
+    <!-- Contenu principal -->
+    <main id="content" class="content-transition">
+        <!-- Le contenu sera injecté ici par le JavaScript -->
     </main>
+
+    <script src="app.js"></script>
 </body>
 </html>
