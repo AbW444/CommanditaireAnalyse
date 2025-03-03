@@ -6,14 +6,14 @@ const pages = {
                 <h1 class="hero-title">ANALYSE DE COMMANDITAIRES</h1>
                 <p class="hero-subtitle">Sélectionner un commanditaire pour visionner la fiche d'analyse.</p>
             </div>
-            <img src="images/IMG01.png" alt="Image d'accueil" class="hero-image">
+            <img src="images/IMG 01.png" alt="Image d'accueil" class="hero-image">
         </div>
     `,
     
     musee: `
         <div class="content-section">
             <div class="content-header">
-                <img src="images/IMG02.png" alt="Logo Musée Océanographique" class="content-logo">
+                <img src="images/IMG 02.png" alt="Logo Musée Océanographique" class="content-logo">
                 <h1>MUSÉE<br>OCÉANOGRAPHIQUE DE MONACO</h1>
             </div>
             
@@ -50,7 +50,7 @@ const pages = {
     natgeo: `
         <div class="content-section">
             <div class="content-header">
-                <img src="images/IMG03.png" alt="Logo National Geographic Wild" class="content-logo">
+                <img src="images/IMG 03.png" alt="Logo National Geographic Wild" class="content-logo">
                 <h1>NATIONAL<br>GEOGRAPHIC WILD</h1>
             </div>
             
@@ -87,7 +87,7 @@ const pages = {
     association: `
         <div class="content-section">
             <div class="content-header">
-                <img src="images/IMG04.png" alt="Logo Association de Protection Marine" class="content-logo">
+                <img src="images/IMG 04.png" alt="Logo Association de Protection Marine" class="content-logo">
                 <h1>ASSOCIATION<br>DE PROTECTION MARINE OCÉANOSCIENTIFIC</h1>
             </div>
             
