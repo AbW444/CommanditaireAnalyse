@@ -77,10 +77,9 @@ const pages = {
             Organisations de sensibilisation et de conservation désireuses d'utiliser une plateforme interactive pour mobiliser un public plus large.</p>
             
             <h2>Mission</h2>
-            <p>Le projet vise à créer une expérience immersive et interactive qui accompagne les documentaires et facilite l'engagement du spectateur. Les principaux axes de développement sont<br>
-            Une interface interactive sous forme de globe, reliant les documentaires et les données scientifiques associées.<br>
-            Une mise en réseau des initiatives de conservation avec des appels à l'action clairs et accessibles.<br>
-            Un parcours utilisateur optimisé pour transformer l'intérêt du spectateur en actions concrètes bénévolat, soutien aux projets, participation à des campagnes de sensibilisation.</p>
+            <p>Ma mission sera de créer un module interactif dédié aux expéditions scientifiques de National Geographic, permettant au public de suivre, revivre et interagir avec les missions sur le terrain. Ce projet vise à sensibiliser aux milieux aquatiques en disparition à travers une expérience immersive post-documentaire, intégrée directement sur le site web de National Geographic.<br>
+            Grâce à une carte interactive des expéditions, un parcours immersif basé sur du contenu réel (vidéos, témoignages, visualisations dynamiques) et des mini-expériences interactives, ce module transformerait le spectateur passif en explorateur actif, tout en valorisant le travail des scientifiques.<br>
+            ette initiative offrirait une passerelle entre les documentaires et l’espace numérique, engageant durablement le public dans la compréhension et la préservation des écosystèmes fragiles.</p>
         </div>
     `,
     
