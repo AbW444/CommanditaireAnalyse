@@ -6,7 +6,11 @@ const pages = {
                 <h1 class="hero-title">ANALYSE DE COMMANDITAIRES</h1>
                 <p class="hero-subtitle">Sélectionner un commanditaire pour visionner la fiche d'analyse.</p>
             </div>
-            <img src="images/IMG 01.png" alt="Image d'accueil" class="hero-image">
+            <div class="image-buttons-container">
+                <img src="images/IMG 02.png" alt="Musée Océanographique" class="nav-image" data-page="musee">
+                <img src="images/IMG 03.png" alt="National Geographic Wild" class="nav-image" data-page="natgeo">
+                <img src="images/IMG 04.png" alt="Association Marine" class="nav-image" data-page="association">
+            </div>
         </div>
     `,
     
@@ -79,7 +83,7 @@ const pages = {
             <h2>Mission</h2>
             <p>Ma mission sera de créer un module interactif dédié aux expéditions scientifiques de National Geographic, permettant au public de suivre, revivre et interagir avec les missions sur le terrain. Ce projet vise à sensibiliser aux milieux aquatiques en disparition à travers une expérience immersive post-documentaire, intégrée directement sur le site web de National Geographic.<br>
             Grâce à une carte interactive des expéditions, un parcours immersif basé sur du contenu réel (vidéos, témoignages, visualisations dynamiques) et des mini-expériences interactives, ce module transformerait le spectateur passif en explorateur actif, tout en valorisant le travail des scientifiques.<br>
-            ette initiative offrirait une passerelle entre les documentaires et l’espace numérique, engageant durablement le public dans la compréhension et la préservation des écosystèmes fragiles.</p>
+            ette initiative offrirait une passerelle entre les documentaires et l'espace numérique, engageant durablement le public dans la compréhension et la préservation des écosystèmes fragiles.</p>
         </div>
     `,
     
@@ -160,6 +164,16 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('logo').addEventListener('click', (event) => {
         event.preventDefault();
         showPage('accueil');
+    });
+    
+    // Gestionnaire d'événements pour les images navigables
+    document.addEventListener('click', (event) => {
+        if (event.target.classList.contains('nav-image')) {
+            const pageName = event.target.getAttribute('data-page');
+            if (pageName) {
+                showPage(pageName);
+            }
+        }
     });
     
     // Gérer la navigation avec les boutons retour/avant du navigateur
